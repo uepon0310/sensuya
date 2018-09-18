@@ -92,6 +92,7 @@
     <Compile Include="Assets\Camera_object.cs" />
     <Compile Include="Assets\HussenController.cs" />
     <Compile Include="Assets\KarasuMove.cs" />
+    <Compile Include="Assets\MoveToge1.cs" />
     <Compile Include="Assets\triger.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

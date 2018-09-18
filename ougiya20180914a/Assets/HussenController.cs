@@ -29,13 +29,12 @@ public class HussenController : MonoBehaviour
     public GameObject GameScreen2;
     public GameObject GameScreen3;
     public GameObject GameScreen4;
+    public GameObject GameScreen5;
 
     public float GameObjectHight;
     public float GameObjectWight;
 
-    public float[] KarasuHight;
-    public Vector2[] KarasuPosition;
-    public int KarasuHiki=0;
+
 
 
     public float HusenPositionDontMoveX;
@@ -76,13 +75,13 @@ public class HussenController : MonoBehaviour
 //0 1 2 3 4 5 6 7 8 9101112131415161718192021 
 { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },//0
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//1
-{ 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//2
+{ 1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,1 },//2
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//3
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//4
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//5
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//6
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//7
-{ 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//8
+{ 1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,1 },//8
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//9
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//10
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//11
@@ -293,7 +292,13 @@ public class HussenController : MonoBehaviour
                         obj4.tag = "Karasu";
                         obj4.transform.localScale = new Vector2(1, 1);
                         obj4.transform.position = new Vector2(GameObjectHight * i, GameObjectWight * j);
-                        KarasuHiki = KarasuHiki + 1;
+                    }
+                    if (data[j, i] == 5)
+                    {
+                        GameObject obj5 = Instantiate(GameScreen5); ;
+                        obj5.tag = "Togetoge";
+                        obj5.transform.localScale = new Vector2(1, 1);
+                        obj5.transform.position = new Vector2(GameObjectHight * i, GameObjectWight * j);
                     }
                 }
 
