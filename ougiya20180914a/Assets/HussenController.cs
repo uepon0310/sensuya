@@ -20,16 +20,7 @@ public class HussenController : MonoBehaviour
     public int HusenGravityY;
 
     public int StageSize = 6;
-
-
     public Vector2 HusenPosition;
-
-
-//    public int StageNumber;
-//    public bool StageWriteFlag;
-
-
-
 
     public float HusenPositionDontMoveX;
     public float HusenPositionDontMoveY;
@@ -38,20 +29,7 @@ public class HussenController : MonoBehaviour
 
     public GameObject gameObjectMakeStage;
 
-
-
-
     public GameObject target1;
-
-    //GameObject unitychan; //Unityちゃんそのものが入る変数
-
-    //MakeStage script; //UnityChanScriptが入る変数
-
-
-
-
-
-
 
     void Awake()
     {
@@ -67,14 +45,6 @@ public class HussenController : MonoBehaviour
         gameObjectMakeStage = GameObject.Find("Stage") as GameObject;
         gameObjectMakeStage.GetComponent< MakeStage >();
 
-        //        MakeStage m1 = GetComponent<MakeStage>;
-
-        //script = this.GetComponent<MakeStage>();
-        //MakeStage makeStage = new MakeStage();
-
-        //MakeStage makeStage = GetComponent<MakeStage>();
-        //        makeStage.CreateStage(StageData1, StageDataX, StageDataY);
-        //CreateStage(StageData2, 22, 79);
     }
 
     // Update is called once per frame

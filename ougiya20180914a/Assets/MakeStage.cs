@@ -74,11 +74,11 @@ public class MakeStage : MonoBehaviour
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//1
 { 1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,1 },//2
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//3
-{ 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//4
+{ 1,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//4
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//5
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//6
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//7
-{ 1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,1 },//8
+{ 1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,0,0,1 },//8
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//9
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//10
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//11
@@ -156,10 +156,8 @@ public class MakeStage : MonoBehaviour
     {
         StageDataX = 10;
         StageDataY = 22;
-        GlobalVariables.StageNumber = 1;
+        GlobalVariables.StageNumber = (int)StageNumbering.Stage_1;
         GlobalVariables.StageWriteFlag = true;
-
-
         CreateStage(StageData1, StageDataX, StageDataY);
     }
 
@@ -167,9 +165,8 @@ public class MakeStage : MonoBehaviour
     {
         if (GlobalVariables.StageWriteFlag == true)
         {
-            StageNumbering Stage = StageNumbering.Stage_2;
 
-            if (GlobalVariables.StageNumber == (int)Stage)
+            if (GlobalVariables.StageNumber == (int)StageNumbering.Stage_2)
             {
                 StageDataX = 22;
                 StageDataY = 79;

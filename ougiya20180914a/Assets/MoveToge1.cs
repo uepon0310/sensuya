@@ -2,34 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveToge1 : MonoBehaviour {
+public class MoveToge1 : MonoBehaviour
+{
 
 
-    public float MaxTogetogeX;
-    public float MinTogetogeX;
-    private int Direction = -1 ;
+    public float MaxTogetogeX = 0;
+    public float MinTogetogeX = 0;
+    private int Direction = -1;
     public float Position;
     public GameObject Togetoge;
-
+    public Vector3 tmp;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
 
- Vector3 tmp = Togetoge.transform.position;
+        tmp = Togetoge.transform.position;
 
-        if (tmp.x >= MinTogetogeX)
+        MinTogetogeX = tmp.x - 5.0f;
+        MaxTogetogeX = tmp.x + 5.0f;
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        tmp = Togetoge.transform.position;
+
+        if (tmp.x <= MinTogetogeX)
         {
             Direction = Direction * -1;
         }
-        if (tmp.x <= MaxTogetogeX)
+
+        if (tmp.x >= MaxTogetogeX)
         {
             Direction = Direction * -1;
         }
+
+
         this.gameObject.transform.Translate(0.05f * Direction, 0, 0);
 
         //        if (tmp.x >= MinTogetogeX)
@@ -37,5 +48,16 @@ public class MoveToge1 : MonoBehaviour {
         //            this.gameObject.transform.Translate(0.05f * Direction, 0, 0);
         //            Direction = Direction * -1;
         //        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D c)
+    {
+        string tag = c.gameObject.tag;
+
+        if ((tag == "ob_wall") || (tag == "Karasu") || (tag == "Togetoge"))
+        {
+            Direction = Direction * -1;
+        }
+
     }
 }
