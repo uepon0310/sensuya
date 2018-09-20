@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveToge1 : MonoBehaviour
-{
+public class MoveToge3 : MonoBehaviour {
 
 
     public float MaxTogetogeX = 0;
     public float MinTogetogeX = 0;
-    private int Direction = -1;
+    private int DirectionX = -1;
+    public float MaxTogetogeY = 0;
+    public float MinTogetogeY = 0;
+    private int DirectionY = -1;
     public float Position;
     public GameObject Togetoge;
     public Vector3 tmp;
@@ -21,6 +23,8 @@ public class MoveToge1 : MonoBehaviour
 
         MinTogetogeX = tmp.x - 5.0f;
         MaxTogetogeX = tmp.x + 5.0f;
+        MinTogetogeY = tmp.y - 5.0f;
+        MaxTogetogeY = tmp.y + 5.0f;
 
     }
 
@@ -32,16 +36,25 @@ public class MoveToge1 : MonoBehaviour
 
         if (tmp.x <= MinTogetogeX)
         {
-            Direction = Direction * -1;
+            DirectionX = DirectionX * -1;
         }
 
         if (tmp.x >= MaxTogetogeX)
         {
-            Direction = Direction * -1;
+            DirectionX = DirectionX * -1;
         }
 
+        if (tmp.y <= MinTogetogeY)
+        {
+            DirectionY = DirectionY * -1;
+        }
 
-        this.gameObject.transform.Translate(0.05f * Direction, 0, 0);
+        if (tmp.y >= MaxTogetogeY)
+        {
+            DirectionY = DirectionY * -1;
+        }
+
+        this.gameObject.transform.Translate(0.05f * DirectionX, 0.05f * DirectionY, 0);
 
         //        if (tmp.x >= MinTogetogeX)
         //        {
@@ -56,7 +69,8 @@ public class MoveToge1 : MonoBehaviour
 
         if ((tag == "ob_wall") || (tag == "Karasu") || (tag == "Togetoge"))
         {
-            Direction = Direction * -1;
+            DirectionX = DirectionX * -1;
+            DirectionY = DirectionY * -1;
         }
 
     }

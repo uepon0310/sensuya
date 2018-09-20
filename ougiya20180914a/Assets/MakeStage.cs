@@ -17,7 +17,13 @@ public class MakeStage : MonoBehaviour
     public GameObject GameScreen3;
     public GameObject GameScreen4;
     public GameObject GameScreen5;
+    public GameObject GameScreen6;
+    public GameObject GameScreen7;
+    public GameObject GameScreen8;
+    public GameObject GameScreen9;
+    public GameObject GameScreen10;
 
+    
     public float GameObjectHight;
     public float GameObjectWight;
 
@@ -73,7 +79,7 @@ public class MakeStage : MonoBehaviour
 { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },//0
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//1
 { 1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,1 },//2
-{ 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//3
+{ 1,0,4,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,4,0,1 },//3
 { 1,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//4
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//5
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//6
@@ -82,7 +88,7 @@ public class MakeStage : MonoBehaviour
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//9
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//10
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//11
-{ 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//12
+{ 1,0,0,0,0,6,0,0,0,0,6,0,0,0,0,0,6,0,0,0,0,1 },//12
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//13
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//14
 { 1,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1 },//15
@@ -91,7 +97,7 @@ public class MakeStage : MonoBehaviour
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//18
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//19
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//20
-{ 1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1 },//21
+{ 1,2,0,0,0,0,0,0,0,0,0,11,0,0,0,0,0,0,0,0,2,1 },//21
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//22
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//23
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//24
@@ -99,7 +105,7 @@ public class MakeStage : MonoBehaviour
 { 1,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,1 },//26
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//27
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//28
-{ 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//29
+{ 1,0,0,0,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0,1 },//29
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//30
 { 1,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,1 },//31
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//32
@@ -154,11 +160,18 @@ public class MakeStage : MonoBehaviour
     };
     void Start()
     {
-        StageDataX = 10;
-        StageDataY = 22;
-        GlobalVariables.StageNumber = (int)StageNumbering.Stage_1;
+        /*
+                StageDataX = 10;
+                StageDataY = 22;
+                GlobalVariables.StageNumber = (int)StageNumbering.Stage_1;
+                GlobalVariables.StageWriteFlag = true;
+                CreateStage(StageData1, StageDataX, StageDataY);
+        */
+        StageDataX = 22;
+        StageDataY = 79;
+        GlobalVariables.StageNumber = (int)StageNumbering.Stage_2;
         GlobalVariables.StageWriteFlag = true;
-        CreateStage(StageData1, StageDataX, StageDataY);
+        CreateStage(StageData2, StageDataX, StageDataY);
     }
 
     public void Update()
@@ -224,6 +237,41 @@ public class MakeStage : MonoBehaviour
                         obj5.tag = "Togetoge";
                         obj5.transform.localScale = new Vector2(1, 1);
                         obj5.transform.position = new Vector2(GameObjectHight * i, GameObjectWight * j);
+                    }
+                    if (data[j, i] == 6)
+                    {
+                        GameObject obj6 = Instantiate(GameScreen6); ;
+                        obj6.tag = "Togetoge";
+                        obj6.transform.localScale = new Vector2(1, 1);
+                        obj6.transform.position = new Vector2(GameObjectHight * i, GameObjectWight * j);
+                    }
+                    if (data[j, i] == 7)
+                    {
+                        GameObject obj7 = Instantiate(GameScreen7); ;
+                        obj7.tag = "Togetoge";
+                        obj7.transform.localScale = new Vector2(1, 1);
+                        obj7.transform.position = new Vector2(GameObjectHight * i, GameObjectWight * j);
+                    }
+                    if (data[j, i] == 8)
+                    {
+                        GameObject obj8 = Instantiate(GameScreen8); ;
+                        obj8.tag = "Togetoge";
+                        obj8.transform.localScale = new Vector2(1, 1);
+                        obj8.transform.position = new Vector2(GameObjectHight * i, GameObjectWight * j);
+                    }
+                    if (data[j, i] == 10)
+                    {
+                        GameObject obj9 = Instantiate(GameScreen9); ;
+                        obj9.tag = "Togetoge";
+                        obj9.transform.localScale = new Vector2(1, 1);
+                        obj9.transform.position = new Vector2(GameObjectHight * i, GameObjectWight * j);
+                    }
+                    if (data[j, i] == 11)
+                    {
+                        GameObject obj10 = Instantiate(GameScreen10); ;
+                        obj10.tag = "Togetoge";
+                        obj10.transform.localScale = new Vector2(1, 1);
+                        obj10.transform.position = new Vector2(GameObjectHight * i, GameObjectWight * j);
                     }
                 }
 

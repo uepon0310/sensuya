@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class HussenController : MonoBehaviour
 {
 
@@ -133,11 +134,13 @@ public class HussenController : MonoBehaviour
 
         HusenGravityX = Mathf.CeilToInt(PointX - HusenPosition.x);
         HusenGravityY = Mathf.CeilToInt(PointY - HusenPosition.y);
-        /*
-        HusenGravityX = Mathf.CeilToInt(PointX);
-        HusenGravityY = Mathf.CeilToInt(PointY);
-        */
-        if (HusenGravityX == 0)
+
+
+            /*
+            HusenGravityX = Mathf.CeilToInt(PointX);
+            HusenGravityY = Mathf.CeilToInt(PointY);
+            */
+            if (HusenGravityX == 0)
         {
             HusenGravityX = -1;
         }
@@ -154,19 +157,22 @@ public class HussenController : MonoBehaviour
         {
             if ((HusenGravityX < 0.0f) && (HusenGravityY < 0.0f))//00
             {
-                //            rigidbody2D.velocity = new Vector2(-1 * 6.0f / HusenGravityX, -1 * 6.0f / HusenGravityY);
-                rigidbody2D.velocity = new Vector2(-1 * 10.0f / HusenGravityX * 0.5f, -1 * 10.0f / HusenGravityY);
+                            rigidbody2D.velocity = new Vector2(-1 * 6.0f / HusenGravityX, -1 * 6.0f / HusenGravityY);
+                //rigidbody2D.velocity = new Vector2(-1 * 10.0f / ( Mathf.ClosestPowerOfTwo(HusenGravityX)), -1 * 10.0f / HusenGravityY);
             }
             if ((HusenGravityX >= 0.0f) && (HusenGravityY < 0.0f))//10
             {
-                rigidbody2D.velocity = new Vector2(-1 * 10.0f / HusenGravityX * 0.5f, -1 * 10.0f / HusenGravityY);
+                rigidbody2D.velocity = new Vector2(-1 * 10.0f / (Mathf.ClosestPowerOfTwo(HusenGravityX)), -1 * 10.0f / HusenGravityY);
+                //rigidbody2D.velocity = new Vector2(-1 * 10.0f / HusenGravityX * 0.5f, -1 * 10.0f / HusenGravityY);
             }
             if ((HusenGravityX >= 0.0f) && (HusenGravityY >= 0.0f))//11
             {
-                rigidbody2D.velocity = new Vector2(-1 * 10.0f / HusenGravityX * 0.5f, -1 * 10.0f / HusenGravityY);
+                //rigidbody2D.velocity = new Vector2(-1 * 10.0f / (Mathf.ClosestPowerOfTwo(HusenGravityX)), -1 * 10.0f / HusenGravityY);
+                                rigidbody2D.velocity = new Vector2(-1 * 10.0f / HusenGravityX * 0.5f, -1 * 10.0f / HusenGravityY);
             }
             if ((HusenGravityX < 0.0f) && (HusenGravityY >= 0.0f))//01
             {
+                //rigidbody2D.velocity = new Vector2(-1 * 10.0f / (Mathf.ClosestPowerOfTwo(HusenGravityX)), -1 * 10.0f / HusenGravityY);
                 rigidbody2D.velocity = new Vector2(-1 * 10.0f / HusenGravityX * 0.5f, -1 * 10.0f / HusenGravityY);
             }
         }
