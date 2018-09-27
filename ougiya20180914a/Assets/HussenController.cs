@@ -71,35 +71,75 @@ public class HussenController : MonoBehaviour
             Flap();
         }
     }
-        public void OnCollisionEnter2D(Collision2D c)
+    public void OnCollisionEnter2D(Collision2D c)
+    {
+        string tag = c.gameObject.tag;
+
+        if (tag == "ob_wall")
         {
-            string tag = c.gameObject.tag;
+            //            rigidbody2D.velocity = new Vector2(-1 * PointX, -1 * PointY);
 
-            if (tag == "ob_wall")
+            if ((PointX < 0.0f) && (PointY < 0.0f))//00
             {
-                //            rigidbody2D.velocity = new Vector2(-1 * PointX, -1 * PointY);
-
-                if ((PointX < 0.0f) && (PointY < 0.0f))//00
-                {
-                    rigidbody2D.velocity = new Vector2(2, 2);
-                }
-                if ((PointX >= 0.0f) && (PointY < 0.0f))//10
-                {
-                    rigidbody2D.velocity = new Vector2(-1 * 2, 2);
-                }
-                if ((PointX >= 0.0f) && (PointY >= 0.0f))//11
-                {
-                    rigidbody2D.velocity = new Vector2(-1 * 2, -1 * 2);
-                }
-                if ((PointX < 0.0f) && (PointY >= 0.0f))//01
-                {
-                    rigidbody2D.velocity = new Vector2(2, -1 * 2);
-                }
-
-                Debug.Log("hit Object  COLLISION");
-                Debug.Log("1:hit filed: " + c.gameObject.tag);
-
+                rigidbody2D.velocity = new Vector2(2, 2);
             }
+            if ((PointX >= 0.0f) && (PointY < 0.0f))//10
+            {
+                rigidbody2D.velocity = new Vector2(-1 * 2, 2);
+            }
+            if ((PointX >= 0.0f) && (PointY >= 0.0f))//11
+            {
+                rigidbody2D.velocity = new Vector2(-1 * 2, -1 * 2);
+            }
+            if ((PointX < 0.0f) && (PointY >= 0.0f))//01
+            {
+                rigidbody2D.velocity = new Vector2(2, -1 * 2);
+            }
+/*
+            if (tag == "goal")
+            {
+                GlobalVariables.StageNumber = GlobalVariables.StageNumber + 1;
+                GlobalVariables.StageWriteFlag = true;
+                //            CreateStage(StageData2, 21, 57);
+                GameObject[] cubes = GameObject.FindGameObjectsWithTag("ob_wall");
+                foreach (GameObject cube in cubes)
+                {
+                    // 消す！
+                    Destroy(cube);
+                }
+                GameObject[] cubes2 = GameObject.FindGameObjectsWithTag("goal");
+                foreach (GameObject cube in cubes2)
+                {
+                    // 消す！
+                    Destroy(cube);
+                }
+                GameObject[] cubes3 = GameObject.FindGameObjectsWithTag("Karasu");
+                foreach (GameObject cube in cubes3)
+                {
+                    // 消す！
+                    Destroy(cube);
+                }
+                GameObject[] cubes4 = GameObject.FindGameObjectsWithTag("Togetoge");
+                foreach (GameObject cube in cubes4)
+                {
+                    // 消す！
+                    Destroy(cube);
+                }
+                tag = "";
+                gameObjectMakeStage.GetComponent<MakeStage>().Update();
+            }
+
+            Debug.Log("hit Object  COLLISION");
+            Debug.Log("1:hit filed: " + c.gameObject.tag);
+*/
+        }
+    }
+
+
+    public void OnTriggerEnter2D(Collider2D t)
+    {
+        string tag = t.gameObject.tag;
+
         if (tag == "goal")
         {
             GlobalVariables.StageNumber = GlobalVariables.StageNumber + 1;
@@ -117,11 +157,23 @@ public class HussenController : MonoBehaviour
                 // 消す！
                 Destroy(cube);
             }
+            GameObject[] cubes3 = GameObject.FindGameObjectsWithTag("Karasu");
+            foreach (GameObject cube in cubes3)
+            {
+                // 消す！
+                Destroy(cube);
+            }
+            GameObject[] cubes4 = GameObject.FindGameObjectsWithTag("Togetoge");
+            foreach (GameObject cube in cubes4)
+            {
+                // 消す！
+                Destroy(cube);
+            }
             tag = "";
             gameObjectMakeStage.GetComponent<MakeStage>().Update();
         }
 
-    }
+  }
         void FixedUpdate()
         {
             // 空気抵抗を与える
