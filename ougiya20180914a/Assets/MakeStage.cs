@@ -7,6 +7,7 @@ static class GlobalVariables
 {
     static public int  StageNumber;
     static public bool StageWriteFlag;
+    static public bool ResetTimeFlag;
 }
 
 public class MakeStage : MonoBehaviour
@@ -84,7 +85,7 @@ public class MakeStage : MonoBehaviour
             { 1,0,0,0,0,0,0,0,0,1 },//19
             { 1,0,0,0,0,0,0,0,0,1 },//20
             { 1,0,0,0,0,0,0,0,0,1 },//21
-            { 1,1,1,0,0,0,1,1,1,1 },//22
+            { 1,1,1,0,0,0,0,1,1,1 },//22
             { 9,9,9,9,9,9,9,9,9,9 },//23
         };
 
@@ -115,7 +116,7 @@ public class MakeStage : MonoBehaviour
             { 1,0,0,0,0,0,0,0,0,1 },//19
             { 1,0,0,0,0,0,0,0,0,1 },//20
             { 1,0,0,0,0,0,0,0,0,1 },//21
-            { 1,1,1,0,0,0,1,1,1,1 },//22
+            { 1,1,1,0,0,0,0,1,1,1 },//22
             { 9,9,9,9,9,9,9,9,9,9 },//23
         };
 
@@ -144,7 +145,7 @@ public class MakeStage : MonoBehaviour
             { 1,0,0,0,0,0,0,0,0,1 },//19
             { 1,0,0,0,0,0,0,0,0,1 },//20
             { 1,0,0,0,0,0,0,0,0,1 },//21
-            { 1,1,1,0,0,0,1,1,1,1 },//22
+            { 1,1,1,0,0,0,0,1,1,1 },//22
             { 9,9,9,9,9,9,9,9,9,9 },//23
         };
 
@@ -257,7 +258,30 @@ public class MakeStage : MonoBehaviour
             { 1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1 },//16
             { 9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9 },//17
         };
+
     public int[,] StageData9 = new int[,]{
+            //0 1 2 3 4 5 6 7 8 91011121314151617 
+            { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },//0
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//1
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//2
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//3
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//4
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//5
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//6
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//7
+            { 1,0,0,0,0,0,0,0,0,11,0,0,0,0,0,0,0,1 },//8
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//9
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//10
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//11
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//12
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//13
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//14
+            { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 },//15
+            { 1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1 },//16
+            { 9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9 },//17
+        };
+
+    public int[,] StageData10 = new int[,]{
             //0 1 2 3 4 5 6 7 8 9
             { 1,1,1,1,1,1,1,1,1,1 },//0
             { 1,0,0,0,0,0,0,0,0,1 },//1
@@ -281,11 +305,11 @@ public class MakeStage : MonoBehaviour
             { 1,0,0,0,0,0,0,0,0,1 },//18
             { 1,0,0,0,0,0,0,0,0,1 },//19
             { 1,0,0,0,0,0,0,0,0,1 },//20
-            { 1,1,1,0,0,0,1,1,1,1 },//21
+            { 1,1,1,0,0,0,0,1,1,1 },//21
             { 9,9,9,9,9,9,9,9,9,9 },//22
         };
 
-    public int[,] StageData10 = new int[,]{
+    public int[,] StageData11 = new int[,]{
             //0 1 2 3 4 5 6 7 8 9
             { 1,1,1,1,1,1,1,1,1,1 },//0
             { 1,0,0,0,0,0,0,0,0,1 },//1
@@ -309,12 +333,12 @@ public class MakeStage : MonoBehaviour
             { 1,0,0,0,0,0,0,0,0,1 },//19
             { 1,0,0,0,0,0,0,0,0,1 },//20
             { 1,0,0,0,0,0,0,0,0,1 },//21
-            { 1,1,1,0,0,0,1,1,1,1 },//22
+            { 1,1,1,0,0,0,0,1,1,1 },//22
             { 9,9,9,9,9,9,9,9,9,9 },//23
         };
 
 
-    public int[,] StageData11 = new int[,]{
+    public int[,] StageData12 = new int[,]{
 
 //0 1 2 3 4 5 6 7 8 9101112131415161718192021 
 { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 },//0
@@ -488,8 +512,8 @@ public class MakeStage : MonoBehaviour
 
             if (GlobalVariables.StageNumber == (int)StageNumbering.Stage_9)
             {
-                StageDataX = 10;
-                StageDataY = 23;
+                StageDataX = 18;
+                StageDataY = 17;
                 CreateStage(StageData9, StageDataX, StageDataY);
                 //                CreateStage(StageData2, StageDataX, StageDataY);//22,79
             }
@@ -504,11 +528,19 @@ public class MakeStage : MonoBehaviour
 
             if (GlobalVariables.StageNumber == (int)StageNumbering.Stage_11)
             {
+                StageDataX = 10;
+                StageDataY = 23;
+                CreateStage(StageData11, StageDataX, StageDataY);
+                //                CreateStage(StageData2, StageDataX, StageDataY);//22,79
+            }
+
+            if (GlobalVariables.StageNumber == (int)StageNumbering.Stage_12)
+            {
                 StageDataX = 22;
                 StageDataY = 79;
-                GlobalVariables.StageNumber = (int)StageNumbering.Stage_11;
+                GlobalVariables.StageNumber = (int)StageNumbering.Stage_12;
                 GlobalVariables.StageWriteFlag = true;
-                CreateStage(StageData11, StageDataX, StageDataY);
+                CreateStage(StageData12, StageDataX, StageDataY);
             }
 
         }
@@ -604,6 +636,8 @@ public void CreateStage(int[,] data, int x, int y)
 
             }
             GlobalVariables.StageWriteFlag = false;
+            GlobalVariables.ResetTimeFlag = true;
+
         }
     }
 

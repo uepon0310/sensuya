@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 
+
 public class HussenController : MonoBehaviour
 {
 
@@ -27,6 +28,8 @@ public class HussenController : MonoBehaviour
     public float HusenPositionDontMoveY;
 
     public float coefficient;
+
+
 
     public GameObject gameObjectMakeStage;
 
@@ -69,8 +72,11 @@ public class HussenController : MonoBehaviour
             PointY = WorldPointPos.y;
 
             Flap();
+
+
         }
     }
+
     public void OnCollisionEnter2D(Collision2D c)
     {
         string tag = c.gameObject.tag;
@@ -94,6 +100,10 @@ public class HussenController : MonoBehaviour
             if ((PointX < 0.0f) && (PointY >= 0.0f))//01
             {
                 rigidbody2D.velocity = new Vector2(2, -1 * 2);
+            }
+        else if(tag == "Togetoge")
+            {
+
             }
 /*
             if (tag == "goal")
@@ -236,6 +246,8 @@ public class HussenController : MonoBehaviour
         Debug.Log("pos1.y:" + HusenPosition.y);
 
     }
+
+
 }
 
 
